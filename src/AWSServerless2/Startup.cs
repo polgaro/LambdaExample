@@ -27,10 +27,13 @@ namespace AWSServerless2
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"ERROR FOUND!!!! {ex.Message}\r\n{ex.StackTrace}");
+                Console.WriteLine($"ERROR FOUND STARTING THE APPLICATION!!!! {ex.Message}\r\n{ex.StackTrace}");
             }
         }
 
+        /// <summary>
+        /// Registers FunctionHandler as the callback for each lambda call
+        /// </summary>
         [MethodImpl(MethodImplOptions.NoOptimization)]
         private static void StartHandlers()
         {
@@ -38,7 +41,10 @@ namespace AWSServerless2
                 (APIGatewayProxyRequest req, ILambdaContext context) => 
                 FunctionHandler< APIGatewayProxyResponse, APIGatewayProxyRequest>(req, context);
 
-            using (var handlerWrapper = HandlerWrapper.GetHandlerWrapper(functionHandler, new Amazon.Lambda.Serialization.Json.JsonSerializer()))
+            using (var handlerWrapper = HandlerWrapper.GetHandlerWrapper(
+                functionHandler, 
+                new Amazon.Lambda.Serialization.Json.JsonSerializer()))
+            
             using (var bootstrap = new LambdaBootstrap(handlerWrapper))
             {
                 Console.Write("RunAsync Started");
@@ -46,6 +52,10 @@ namespace AWSServerless2
             }
         }
 
+        /// <summary>
+        /// Executed for each Lambda call.
+        /// It will create a LambdaExecuter for it to handle the request.
+        /// </summary>
         [MethodImpl(MethodImplOptions.NoOptimization)]
         public static TResponse FunctionHandler
                 <TResponse, TRequest>(TRequest input, ILambdaContext context)
@@ -56,6 +66,9 @@ namespace AWSServerless2
             return handler.HandleRequest(input, context);
         }
 
+        /// <summary>
+        /// Gets the handler from the Environment Variable and creates a new LambdaExecuter
+        /// </summary>
         [MethodImpl(MethodImplOptions.NoOptimization)]
         private static LambdaExecuter<TResponse, TRequest> GetHandler<TResponse, TRequest>()
         {
@@ -63,6 +76,9 @@ namespace AWSServerless2
             return new LambdaExecuter<TResponse, TRequest>(handlerName);
         }
 
+        /// <summary>
+        /// Initializes the JsonConvert with a small payload
+        /// </summary>
         [MethodImpl(MethodImplOptions.NoOptimization)]
         private static void Initialize()
         {

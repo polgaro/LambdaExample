@@ -38,7 +38,7 @@ namespace AWSServerless2
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"ERROR FOUND!!!! {ex.Message}\r\n{ex.StackTrace}");
+                Console.WriteLine($"ERROR FOUND CREATING HANDLER!!!! {ex.Message}\r\n{ex.StackTrace}");
             }
         }
 
