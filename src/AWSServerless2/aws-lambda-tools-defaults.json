@@ -15,5 +15,5 @@
     "template-parameters" : "",
     "s3-bucket"           : "dgarber-serverless-demo-bucket",
     "stack-name"          : "dgarber-stack",
-    "msbuild-parameters"  : "--self-contained true /p:PublishTrimmed=true /p:PublishReadyToRun=true"
+    "msbuild-parameters"  : "/p:PublishReadyToRun=true --self-contained false"
 }

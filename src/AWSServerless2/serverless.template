@@ -10,7 +10,7 @@
 			"Properties": 
 			{
 				"Handler": "AWSServerless2::AWSServerless2.Functions::Get",
-				"Runtime": "provided",
+				"Runtime": "dotnetcore3.1",
 				"CodeUri": "",
 				"MemorySize": 256,
 				"Timeout": 30,
@@ -36,7 +36,7 @@
 			"Properties": 
 			{
 				"Handler": "AWSServerless2::AWSServerless2.Functions::Get2",
-				"Runtime": "provided",
+				"Runtime": "dotnetcore3.1",
 				"CodeUri": "",
 				"MemorySize": 256,
 				"Timeout": 30,
