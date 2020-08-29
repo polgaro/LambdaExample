@@ -30,15 +30,15 @@ Let’s create a Serverless application:
 
 ON the next screen, we will select `Empty Serverless Application`:
 
-![Image for post](https://miro.medium.com/max/2558/1*PV0rRdhYZ_tVuI8ZKsgjTA.png)
+![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Select%20Blueprint.png)
 
 After that, we’ll publish our application to see what happens. We can do it directly from Visual Studio. As we installed the AWS Toolkit, we can choose to use AWS Explorer:
 
-![Image for post](https://miro.medium.com/max/1020/1*-GjnaYWSxsj9WTOAlsdPJA.png)
+![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Use%20AWS%20Explorer.png)
 
 From there, we can add our AWS account credentials:
 
-![Image for post](https://miro.medium.com/max/2262/1*RhBtaJqbKDMsSXCp0oDqug.png)
+![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/AWS%20Account%20Credentials.png)
 
 After our account credentials have been added, we can right click and select `Publish to AWS Lambda`:
 
