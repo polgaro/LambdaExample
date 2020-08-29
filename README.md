@@ -106,7 +106,7 @@ This is the script that the Lambda host calls to start the custom `runtime./var/
 
 We’ll configure it as `Content` and `Copy Always` To do this, we’ll select the file and press F4 (or right click and select `Properties`).
 
-![Image for post](https://miro.medium.com/max/892/1*5Ss_lRrNkO9MvwMs1RNu9w.png)
+![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Adding%20custom%20runtime.png)
 
 Then, we’ll modify our project file to run in Core 3.1; by updating `TargetFramework`, and`OutputType`, and adding a package reference to `Amazon.Lambda.RuntimeSupport` ,   In the Solution Explorer window, click the project and it’s going to open the editor.
 
@@ -387,13 +387,13 @@ Note that the “`--self-contained true`” is necessary to create a package tha
 
 At this point, our project should look like this:
 
-![Image for post](https://miro.medium.com/max/868/1*s-TcFpvePOW1ZcDjn8ZOSA.png)
+![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Adding%20custom%20runtime%202.png)
 
 So far we switched to 3.1, switched to a `provided` framework, and created a package that includes the full framework.
 
 Now we can publish and see what happens. The results are not staggering:
 
-![Image for post](https://miro.medium.com/max/3322/1*SHSPpyLuQLqllcN0kjVw7A.png)
+![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Adding%20custom%20runtime%203.png)
 
 Everything changes when we start compiling Ahead of Time (AoT). With Core 3.0, Microsoft added ReadyToRun.
 
@@ -413,15 +413,15 @@ Our new MSBuild parameters will be:
 
 Now, we’ll right click our project and click `Open Folder in File Explorer`:
 
-![Image for post](https://miro.medium.com/max/962/1*T8f4seZN7Bv6by-MNr3oBQ.png)
+![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Adding%20custom%20runtime%204.png)
 
 And we’ll open a command line prompt by writing `cmd` and pressing enter:
 
-![Image for post](https://miro.medium.com/max/2812/1*GdnywYhgQnHSqiWNq2Szyg.png)
+![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Adding%20custom%20runtime%205.png)
 
 It’s time to build our container:
 
-![Image for post](https://miro.medium.com/max/2200/1*R0qQaamF8ghyQJRxZ4IUbg.png)
+![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Adding%20custom%20runtime%206.png)
 
 After the container is created, we can run it:
 
@@ -429,21 +429,21 @@ After the container is created, we can run it:
 
 We’ll see something like this when it finishes.
 
-![Image for post](https://miro.medium.com/max/2194/1*X65v6mUu2CgjP3aUiO0fPw.png)
+![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Adding%20custom%20runtime%207.png)
 
 Do you see the file that got generated (called  `app.zip`)? We’ll upload it to our function as that’s our new binaries, created and compiled by our Linux container.
 
 We’ll go back to our Lambda in our AWS console, scroll down to the function code, and click `Upload` to upload our new app.zip:
 
-![Image for post](https://miro.medium.com/max/3222/1*yg3c9hgvndIj1H5ljZZH3g.png)
+![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Adding%20custom%20runtime%208.png)
 
 We’ll select our app.zip and upload. It’ll take a while now that our package is larger as it contains the whole framework. Note that the app.zip is 31MB.
 
-![Image for post](https://miro.medium.com/max/1966/1*X3P7j965ULJSSHvYlQxCdw.png)
+![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Adding%20custom%20runtime%209.png)
 
 So now, we execute it and…
 
-![Image for post](https://miro.medium.com/max/2806/1*UanEPPBU4RBQGuEG1Y-PTw.png)
+![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Adding%20custom%20runtime%2010.png)
 
 Bingo! total time under 1.2 seconds! Not bad huh? Think we can beat that? You bet!
 
@@ -455,11 +455,11 @@ Note that we’re using  `PublishTrimmed`, please take into account that it will
 
 Now our package is smaller:
 
-![Image for post](https://miro.medium.com/max/1974/1*JKll2-laI5whdXdZlF2Q_A.png)
+![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Adding%20custom%20runtime%2011.png)
 
 And the results?
 
-![Image for post](https://miro.medium.com/max/3300/1*Vm0VaBRzn9jMb8tdoqRJag.png)
+![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Adding%20custom%20runtime%2012.png)
 
 1.1 seconds? That’s half of the original time. Can we keep going? Yes we can!
 
@@ -473,7 +473,7 @@ So, let’s optimize the  `JsonConvert` (a class provided by `NewtonSoft.Json`),
 
 We check the time again and…
 
-![Image for post](https://miro.medium.com/max/3304/1*x8zni_Moj_3CFwIUzZZszQ.png)
+![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Adding%20custom%20runtime%2013.png)
 
 One second! Great!
 
@@ -483,7 +483,7 @@ Also, we’ll add some hints to the compiler to tell it NOT to optimize our code
 
 And the results:
 
-![Image for post](https://miro.medium.com/max/3310/1*EHPkfDgFCfR4o32eNzH9EA.png)
+![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Adding%20custom%20runtime%2014.png)
 
 Oh, yes! 800ms!
 
