@@ -58,7 +58,7 @@ You can see that the status is `CREATE_IN_PROGRESS`, and we’ll wait until it s
 
 You can see that it displays an AWS Serverless URL. Let’s give it a try!
 
-![Image for post](hhttps://github.com/zzaman/LambdaExample/blob/feature/README/media/Hello%20AWS%20Serverless.png)
+![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Hello%20AWS%20Serverless.png)
 
 Hey, hello to you too AWS Serverless!
 
@@ -78,23 +78,23 @@ Publish again, adjust the URL to add the `/Get2` and we get this:
 
 Let’s login to our AWS account. We’ll go to the Lambdas page. We’ll see something similar to this:
 
-![Image for post](https://miro.medium.com/max/3064/1*BB_mvsoVG3NT9sOVoRWMfA.png)
+![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/AWS%20login%20console.png)
 
 We’re interested in our  `Get2`  function, so we’ll click it and see the following:
 
-![Image for post](https://miro.medium.com/max/3048/1*ke7j2GIxqiLq-aS8liajAA.png)
+![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/AWS%20Console%20Get2.png)
 
 If we click on the `Monitoring` tab, we can click `View logs in CloudWatch`:
 
-![Image for post](https://miro.medium.com/max/3040/1*HvZmiccDtEviWImZfXNA4Q.png)
+![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/AWS%20Console%20View%20logs.png)
 
 We will see only one container that was initialized:
 
-![Image for post](https://miro.medium.com/max/3060/1*POf9TYumblf0IzDLAd1JfA.png)
+![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/One%20container.png)
 
 On refreshing the page so you can see multiple executions, so when we click the Log Stream, we can see the following:
 
-![Image for post](https://miro.medium.com/max/3314/1*zRQFllDpqKuY74fw9ynpqg.png)
+![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Multiple%20executions.png)
 
 We can see that the first execution took more than 2100ms (a cold start), and the second took 1ms! That’s our baseline.
 
