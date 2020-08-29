@@ -42,19 +42,19 @@ From there, we can add our AWS account credentials:
 
 After our account credentials have been added, we can right click and select `Publish to AWS Lambda`:
 
-![Image for post](https://miro.medium.com/max/880/1*nRTxeGLvDC0g-KrtrSd2BA.png)
+![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Publish%20to%20AWS%20Lambda.png)
 
 We will leave all the options as default but to upload it we will have to create a S3 Bucket (select `New`):
 
-![Image for post](https://miro.medium.com/max/2124/1*oah52bupYrUFpv8WhAL2CA.png)
+![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Create%20New%20Bucket.png)
 
 After creating our container, click `Publish`, and a screen will appear to show us what’s happening behind the scenes:
 
-![Image for post](https://miro.medium.com/max/3752/1*onfgMqAh_JThVJAJrf816Q.png)
+![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Publish%20in%20progess.png)
 
 You can see that the status is `CREATE_IN_PROGRESS`, and we’ll wait until it says `CREATE_COMPLETE`:
 
-![Image for post](https://miro.medium.com/max/3688/1*Bfeopr20a2v4-KCMQux0gw.png)
+![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Progress%20complete.png)
 
 You can see that it displays an AWS Serverless URL. Let’s give it a try!
 
