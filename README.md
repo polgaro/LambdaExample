@@ -58,7 +58,7 @@ You can see that the status is `CREATE_IN_PROGRESS`, and we’ll wait until it s
 
 You can see that it displays an AWS Serverless URL. Let’s give it a try!
 
-![Image for post](hhttps://github.com/zzaman/LambdaExample/blob/feature/README/media/Hello%20AWS%20Serverless.png)
+![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Hello%20AWS%20Serverless.png)
 
 Hey, hello to you too AWS Serverless!
 
