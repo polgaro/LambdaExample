@@ -58,7 +58,7 @@ You can see that the status is `CREATE_IN_PROGRESS`, and we’ll wait until it s
 
 You can see that it displays an AWS Serverless URL. Let’s give it a try!
 
-![Image for post](https://miro.medium.com/max/1830/1*Lw49a24LwCV-qHmKgJAJIQ.png)
+![Image for post](hhttps://github.com/zzaman/LambdaExample/blob/feature/README/media/Hello%20AWS%20Serverless.png)
 
 Hey, hello to you too AWS Serverless!
 
@@ -66,15 +66,15 @@ By default, we got a function called `Get`, but let’s add another function jus
 
 For that, we’re going to open our  `serverless.template`  file, and add a `Get2` function after the `Get`. It looks like this:
 
-![Image for post](https://miro.medium.com/max/1810/1*C8qxgAyECGEVNgNvwKDc4Q.png)
+![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Serverless%20template.png)
 
 In the same  `Function.cs`  file, we’ll add another function. It looks like this:
 
-![Image for post](https://miro.medium.com/max/2532/1*p0CdeaNXNafFuay0gTGdzg.png)
+![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Function_cs.png)
 
 Publish again, adjust the URL to add the `/Get2` and we get this:
 
-![Image for post](https://miro.medium.com/max/1714/1*v1s_2UyQevYsQTsoz1AQ5Q.png)
+![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Hello%20Serverless%202.png)
 
 Let’s login to our AWS account. We’ll go to the Lambdas page. We’ll see something similar to this:
 
