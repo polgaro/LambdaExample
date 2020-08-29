@@ -94,7 +94,7 @@ We will see only one container that was initialized:
 
 On refreshing the page so you can see multiple executions, so when we click the Log Stream, we can see the following:
 
-![Image for post](https://miro.medium.com/max/3314/1*zRQFllDpqKuY74fw9ynpqg.png)
+![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Multiple%20executions.png)
 
 We can see that the first execution took more than 2100ms (a cold start), and the second took 1ms! That’s our baseline.
 
