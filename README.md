@@ -501,7 +501,7 @@ We’ll update the serverless.template.
 
 We’ll update the Runtime to `dotnetcore3.1`.
 
-![Image for post](https://miro.medium.com/max/1590/1*J9BFCQnzs1kAQuIaca4Sgw.png)
+![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/3.1%20framework%201.png)
 
 ### Step 2:
 
@@ -543,7 +543,7 @@ Update the aws-lambda-tools-defaults.json with the instructions given by AWS, na
 
 Update your Function.cs to use the new Serializer:
 
-![Image for post](https://miro.medium.com/max/2758/1*gPbNjjouq2BVA20bN7VI8g.png)
+![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/3.1%20framework%202.png)
 
 ### Step 6:
 
@@ -555,13 +555,13 @@ We don’t need to redo our dockerfile or recompile our image, so we only need t
 
 You’ll see something like this when your package is complete:
 
-![Image for post](https://miro.medium.com/max/3096/1*itMc0FaCahTJdGPq7SxlPw.png)
+![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/3.1%20framework%203.png)
 
 Now, we deploy it just like we did before and we try again.
 
 We get…
 
-![Image for post](https://miro.medium.com/max/3186/1*hvdxYgnOLuNfqfCg9fKQpA.png)
+![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/3.1%20framework%204.png)
 
 Wait… 321ms??? YES.
 
