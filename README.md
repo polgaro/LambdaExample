@@ -26,7 +26,7 @@ Disclaimer: this is to compare the 2.1 framework with the custom framework. By t
 
 Let’s create a Serverless application:
 
-![Image for post](https://miro.medium.com/max/2548/1*o4_zyS4kNb9M-79ZSqoPZA.png)
+![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Create%20a%20new%20project.png)
 
 ON the next screen, we will select `Empty Serverless Application`:
 
