@@ -2,7 +2,7 @@
 
 If you’re not sure what a cold start is or why is it important to minimize the time they take, you can read my article on cold starts:
 
-(** link to “Cold starts on AWS Lambda using DotNet core” here).
+https://medium.com/slalom-build/solving-cold-starts-on-aws-lambda-when-using-dotnet-core-51f244f08f60
 
 In this README, I will show you specific steps to lower the start up time of a Lambda. We’ll go from 2.2 seconds to 0.8 seconds using 256 MB for the whole example, as the memory allocated for a function is a factor on how long it takes to load.
 
