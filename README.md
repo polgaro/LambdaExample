@@ -26,39 +26,39 @@ Disclaimer: this is to compare the 2.1 framework with the custom framework. By t
 
 Let’s create a Serverless application:
 
-![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Create%20a%20new%20project.png)
+![Image for post](https://github.com/polgaro/LambdaExample/blob/master/media/Create%20a%20new%20project.png)
 
 ON the next screen, we will select `Empty Serverless Application`:
 
-![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Select%20Blueprint.png)
+![Image for post](https://github.com/polgaro/LambdaExample/blob/master/media/Select%20Blueprint.png)
 
 After that, we’ll publish our application to see what happens. We can do it directly from Visual Studio. As we installed the AWS Toolkit, we can choose to use AWS Explorer:
 
-![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Use%20AWS%20Explorer.png)
+![Image for post](https://github.com/polgaro/LambdaExample/blob/master/media/Use%20AWS%20Explorer.png)
 
 From there, we can add our AWS account credentials:
 
-![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/AWS%20Account%20Credentials.png)
+![Image for post](https://github.com/polgaro/LambdaExample/blob/master/media/AWS%20Account%20Credentials.png)
 
 After our account credentials have been added, we can right click and select `Publish to AWS Lambda`:
 
-![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Publish%20to%20AWS%20Lambda.png)
+![Image for post](https://github.com/polgaro/LambdaExample/blob/master/media/Publish%20to%20AWS%20Lambda.png)
 
 We will leave all the options as default but to upload it we will have to create a S3 Bucket (select `New`):
 
-![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Create%20New%20Bucket.png)
+![Image for post](https://github.com/polgaro/LambdaExample/blob/master/media/Create%20New%20Bucket.png)
 
 After creating our container, click `Publish`, and a screen will appear to show us what’s happening behind the scenes:
 
-![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Publish%20in%20progess.png)
+![Image for post](https://github.com/polgaro/LambdaExample/blob/master/media/Publish%20in%20progess.png)
 
 You can see that the status is `CREATE_IN_PROGRESS`, and we’ll wait until it says `CREATE_COMPLETE`:
 
-![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Progress%20complete.png)
+![Image for post](https://github.com/polgaro/LambdaExample/blob/master/media/Progress%20complete.png)
 
 You can see that it displays an AWS Serverless URL. Let’s give it a try!
 
-![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Hello%20AWS%20Serverless.png)
+![Image for post](https://github.com/polgaro/LambdaExample/blob/master/media/Hello%20AWS%20Serverless.png)
 
 Hey, hello to you too AWS Serverless!
 
@@ -66,35 +66,35 @@ By default, we got a function called `Get`, but let’s add another function jus
 
 For that, we’re going to open our  `serverless.template`  file, and add a `Get2` function after the `Get`. It looks like this:
 
-![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Serverless%20template.png)
+![Image for post](https://github.com/polgaro/LambdaExample/blob/master/media/Serverless%20template.png)
 
 In the same  `Function.cs`  file, we’ll add another function. It looks like this:
 
-![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Function_cs.png)
+![Image for post](https://github.com/polgaro/LambdaExample/blob/master/media/Function_cs.png)
 
 Publish again, adjust the URL to add the `/Get2` and we get this:
 
-![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Hello%20Serverless%202.png)
+![Image for post](https://github.com/polgaro/LambdaExample/blob/master/media/Hello%20Serverless%202.png)
 
 Let’s login to our AWS account. We’ll go to the Lambdas page. We’ll see something similar to this:
 
-![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/AWS%20login%20console.png)
+![Image for post](https://github.com/polgaro/LambdaExample/blob/master/media/AWS%20login%20console.png)
 
 We’re interested in our  `Get2`  function, so we’ll click it and see the following:
 
-![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/AWS%20Console%20Get2.png)
+![Image for post](https://github.com/polgaro/LambdaExample/blob/master/media/AWS%20Console%20Get2.png)
 
 If we click on the `Monitoring` tab, we can click `View logs in CloudWatch`:
 
-![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/AWS%20Console%20View%20logs.png)
+![Image for post](https://github.com/polgaro/LambdaExample/blob/master/media/AWS%20Console%20View%20logs.png)
 
 We will see only one container that was initialized:
 
-![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/One%20container.png)
+![Image for post](https://github.com/polgaro/LambdaExample/blob/master/media/One%20container.png)
 
 On refreshing the page so you can see multiple executions, so when we click the Log Stream, we can see the following:
 
-![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Multiple%20executions.png)
+![Image for post](https://github.com/polgaro/LambdaExample/blob/master/media/Multiple%20executions.png)
 
 We can see that the first execution took more than 2100ms (a cold start), and the second took 1ms! That’s our baseline.
 
@@ -106,7 +106,7 @@ This is the script that the Lambda host calls to start the custom `runtime./var/
 
 We’ll configure it as `Content` and `Copy Always` To do this, we’ll select the file and press F4 (or right click and select `Properties`).
 
-![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Adding%20custom%20runtime.png)
+![Image for post](https://github.com/polgaro/LambdaExample/blob/master/media/Adding%20custom%20runtime.png)
 
 Then, we’ll modify our project file to run in Core 3.1; by updating `TargetFramework`, and`OutputType`, and adding a package reference to `Amazon.Lambda.RuntimeSupport` ,   In the Solution Explorer window, click the project and it’s going to open the editor.
 
@@ -387,13 +387,13 @@ Note that the “`--self-contained true`” is necessary to create a package tha
 
 At this point, our project should look like this:
 
-![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Adding%20custom%20runtime%202.png)
+![Image for post](https://github.com/polgaro/LambdaExample/blob/master/media/Adding%20custom%20runtime%202.png)
 
 So far we switched to 3.1, switched to a `provided` framework, and created a package that includes the full framework.
 
 Now we can publish and see what happens. The results are not staggering:
 
-![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Adding%20custom%20runtime%203.png)
+![Image for post](https://github.com/polgaro/LambdaExample/blob/master/media/Adding%20custom%20runtime%203.png)
 
 Everything changes when we start compiling Ahead of Time (AoT). With Core 3.0, Microsoft added ReadyToRun.
 
@@ -413,15 +413,15 @@ Our new MSBuild parameters will be:
 
 Now, we’ll right click our project and click `Open Folder in File Explorer`:
 
-![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Adding%20custom%20runtime%204.png)
+![Image for post](https://github.com/polgaro/LambdaExample/blob/master/media/Adding%20custom%20runtime%204.png)
 
 And we’ll open a command line prompt by writing `cmd` and pressing enter:
 
-![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Adding%20custom%20runtime%205.png)
+![Image for post](https://github.com/polgaro/LambdaExample/blob/master/media/Adding%20custom%20runtime%205.png)
 
 It’s time to build our container:
 
-![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Adding%20custom%20runtime%206.png)
+![Image for post](https://github.com/polgaro/LambdaExample/blob/master/media/Adding%20custom%20runtime%206.png)
 
 After the container is created, we can run it:
 
@@ -429,21 +429,21 @@ After the container is created, we can run it:
 
 We’ll see something like this when it finishes.
 
-![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Adding%20custom%20runtime%207.png)
+![Image for post](https://github.com/polgaro/LambdaExample/blob/master/media/Adding%20custom%20runtime%207.png)
 
 Do you see the file that got generated (called  `app.zip`)? We’ll upload it to our function as that’s our new binaries, created and compiled by our Linux container.
 
 We’ll go back to our Lambda in our AWS console, scroll down to the function code, and click `Upload` to upload our new app.zip:
 
-![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Adding%20custom%20runtime%208.png)
+![Image for post](https://github.com/polgaro/LambdaExample/blob/master/media/Adding%20custom%20runtime%208.png)
 
 We’ll select our app.zip and upload. It’ll take a while now that our package is larger as it contains the whole framework. Note that the app.zip is 31MB.
 
-![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Adding%20custom%20runtime%209.png)
+![Image for post](https://github.com/polgaro/LambdaExample/blob/master/media/Adding%20custom%20runtime%209.png)
 
 So now, we execute it and…
 
-![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Adding%20custom%20runtime%2010.png)
+![Image for post](https://github.com/polgaro/LambdaExample/blob/master/media/Adding%20custom%20runtime%2010.png)
 
 Bingo! total time under 1.2 seconds! Not bad huh? Think we can beat that? You bet!
 
@@ -455,11 +455,11 @@ Note that we’re using  `PublishTrimmed`, please take into account that it will
 
 Now our package is smaller:
 
-![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Adding%20custom%20runtime%2011.png)
+![Image for post](https://github.com/polgaro/LambdaExample/blob/master/media/Adding%20custom%20runtime%2011.png)
 
 And the results?
 
-![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Adding%20custom%20runtime%2012.png)
+![Image for post](https://github.com/polgaro/LambdaExample/blob/master/media/Adding%20custom%20runtime%2012.png)
 
 1.1 seconds? That’s half of the original time. Can we keep going? Yes we can!
 
@@ -473,7 +473,7 @@ So, let’s optimize the  `JsonConvert` (a class provided by `NewtonSoft.Json`),
 
 We check the time again and…
 
-![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Adding%20custom%20runtime%2013.png)
+![Image for post](https://github.com/polgaro/LambdaExample/blob/master/media/Adding%20custom%20runtime%2013.png)
 
 One second! Great!
 
@@ -483,7 +483,7 @@ Also, we’ll add some hints to the compiler to tell it NOT to optimize our code
 
 And the results:
 
-![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/Adding%20custom%20runtime%2014.png)
+![Image for post](https://github.com/polgaro/LambdaExample/blob/master/media/Adding%20custom%20runtime%2014.png)
 
 Oh, yes! 800ms!
 
@@ -501,7 +501,7 @@ We’ll update the serverless.template.
 
 We’ll update the Runtime to `dotnetcore3.1`.
 
-![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/3.1%20framework%201.png)
+![Image for post](https://github.com/polgaro/LambdaExample/blob/master/media/3.1%20framework%201.png)
 
 ### Step 2:
 
@@ -543,7 +543,7 @@ Update the aws-lambda-tools-defaults.json with the instructions given by AWS, na
 
 Update your Function.cs to use the new Serializer:
 
-![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/3.1%20framework%202.png)
+![Image for post](https://github.com/polgaro/LambdaExample/blob/master/media/3.1%20framework%202.png)
 
 ### Step 6:
 
@@ -555,13 +555,13 @@ We don’t need to redo our dockerfile or recompile our image, so we only need t
 
 You’ll see something like this when your package is complete:
 
-![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/3.1%20framework%203.png)
+![Image for post](https://github.com/polgaro/LambdaExample/blob/master/media/3.1%20framework%203.png)
 
 Now, we deploy it just like we did before and we try again.
 
 We get…
 
-![Image for post](https://github.com/zzaman/LambdaExample/blob/feature/README/media/3.1%20framework%204.png)
+![Image for post](https://github.com/polgaro/LambdaExample/blob/master/media/3.1%20framework%204.png)
 
 Wait… 321ms??? YES.
 
